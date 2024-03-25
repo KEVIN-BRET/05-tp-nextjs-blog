@@ -2,8 +2,6 @@ import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
 
 export default function index(props) {
-  // console.log(props);
-
   const articles = props.articles;
 
   return (
@@ -20,7 +18,10 @@ export default function index(props) {
                 <p className="card-text">
                   {article.body.slice(0, 20) + " ..."}
                 </p>
-                <Link href={`/blog/${article.id.toString()}`} > <span className="card-link">Lire cet article</span></Link>
+                <Link href={`/blog/${article.id.toString()}`}>
+                  {" "}
+                  <span className="card-link">Lire cet article</span>
+                </Link>
               </div>
             </div>
           </div>
@@ -30,6 +31,7 @@ export default function index(props) {
   );
 }
 
+// on importe des données et on les passe en props
 export async function getStaticProps() {
   const data = await fetch("https://jsonplaceholder.typicode.com/posts");
   const articles = await data.json();

@@ -12,7 +12,7 @@ export default function Container({children}) {
           <Link href="/blog">
             <span className="navbar-brand mx-4">Blog</span>
           </Link>
-          <Link href="/utilisateur">
+          <Link href="/utilisateurs">
             <span className="navbar-brand mx-4">Liste</span>
           </Link>
         </div>
